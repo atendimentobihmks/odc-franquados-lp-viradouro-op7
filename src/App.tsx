@@ -554,13 +554,13 @@ export default function App() {
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group mt-8 border border-white/10 h-[380px] sm:h-[480px] md:h-[560px] bg-brand-green-dark/40">
+            <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group mt-8 border border-white/15 bg-brand-green-dark/60 p-2 sm:p-4 flex items-center justify-center backdrop-blur-sm">
               <img 
                 src={unit.images.facade} 
                 alt={`Clínica OdontoCompany ${unit.name}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" 
+                className="w-full max-h-[580px] object-contain rounded-2xl group-hover:scale-[1.02] transition-transform duration-700 shadow-lg" 
               />
             </div>
           </div>
