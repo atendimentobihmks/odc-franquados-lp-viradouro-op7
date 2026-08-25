@@ -39,7 +39,7 @@ function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
 }
 
 export default function App() {
-  const [unit, setUnit] = useState<UnitData>(UNITS_DATA.itaqua || getUnitFromUrl());
+  const [unit, setUnit] = useState<UnitData>(getUnitFromUrl());
   const [openFaqs, setOpenFaqs] = useState<number[]>([]);
   const [scrolled, setScrolled] = useState(false);
   
