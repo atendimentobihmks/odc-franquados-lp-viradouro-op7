@@ -536,10 +536,14 @@ export default function App() {
         </section>
 
         {/* CLINIC STRUCTURE GALLERY */}
-        <section id="estrutura" className="py-20 bg-brand-odc">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-3xl mx-auto space-y-4 mb-16 flex flex-col items-center text-center">
+        <section id="estrutura" className="py-20 bg-brand-odc relative overflow-hidden">
+          {/* Decorative subtle ambient backdrop */}
+          <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div className="max-w-3xl mx-auto space-y-4 mb-12 flex flex-col items-center text-center">
               <div className="flex flex-col items-center">
+                <span className="text-brand-lime font-bold uppercase tracking-widest text-xs sm:text-sm mb-2">Conheça Nossa Unidade</span>
                 <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
                   Estrutura moderna planejada para o seu bem-estar
                 </h2>
@@ -549,19 +553,52 @@ export default function App() {
                   <span className="h-[2px] w-16 bg-gradient-to-l from-transparent to-white rounded-full"></span>
                 </div>
               </div>
-              <p className="text-white/80 text-lg md:text-xl max-w-3xl">
-                Ambientes climatizados, salas esterilizadas e equipamentos de ponta para garantir a segurança e o conforto do seu atendimento.
+              <p className="text-white/90 text-base md:text-lg max-w-2xl font-light">
+                Ambientes climatizados, salas esterilizadas e equipamentos de ponta para garantir a segurança e o conforto do seu atendimento em <strong className="font-semibold text-white">{unit.name}</strong>.
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group mt-8 border border-white/15 bg-brand-green-dark/60 p-2 sm:p-4 flex items-center justify-center backdrop-blur-sm">
-              <img 
-                src={unit.images.facade} 
-                alt={`Clínica OdontoCompany ${unit.name}`}
-                loading="lazy"
-                decoding="async"
-                className="w-full max-h-[580px] object-contain rounded-2xl group-hover:scale-[1.02] transition-transform duration-700 shadow-lg" 
-              />
+            {/* Visual Showcase Card with Ambient Blur Fill (Zero Crop, Zero Empty Borders) */}
+            <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 backdrop-blur-md relative group">
+              <div className="relative w-full flex items-center justify-center bg-black/20 overflow-hidden min-h-[320px] sm:min-h-[420px] md:min-h-[480px]">
+                {/* Ambient blurred backdrop that naturally matches the photo */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center blur-2xl opacity-40 scale-110 pointer-events-none"
+                  style={{ backgroundImage: `url(${unit.images.facade})` }}
+                ></div>
+                
+                {/* Main crisp uncropped image */}
+                <img 
+                  src={unit.images.facade} 
+                  alt={`Fachada Clínica OdontoCompany ${unit.name}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="relative z-10 w-auto max-w-full max-h-[520px] md:max-h-[580px] object-contain rounded-2xl transition-transform duration-700 group-hover:scale-[1.01] p-1 sm:p-2" 
+                />
+              </div>
+              
+              {/* Bottom Address & CTA Bar */}
+              <div className="bg-brand-green-dark/95 border-t border-white/10 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-green-primary/30 border border-brand-lime/40 flex items-center justify-center text-brand-lime shrink-0">
+                    <MapPin className="w-5 h-5" weight="fill" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/70 uppercase tracking-wider font-semibold">Localização da Unidade</p>
+                    <p className="text-sm sm:text-base font-bold text-white">{unit.address.street}, {unit.address.number} - {unit.address.neighborhood}</p>
+                  </div>
+                </div>
+                
+                <a 
+                  href={`https://wa.me/${unit.whatsapp}?text=${encodeURIComponent(unit.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-lime text-brand-green-dark font-extrabold rounded-xl text-sm shadow-md hover:bg-white transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>Visitar Unidade</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
