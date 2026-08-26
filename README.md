@@ -9,7 +9,7 @@ Landing Page Institucional e de Alta Conversão em React 19 + TypeScript + Vite 
 * **Endereço:** Rua Cel. Valter, 138 • Centro, Viradouro/SP - CEP 14740-000
 * **WhatsApp:** (17) 99669-8549 (`5517996698549`)
 * **Instagram:** https://www.instagram.com/odontocompanyviradouro/
-* **Facebook:** https://web.facebook.com/odontocompanyviradouro/
+* **Facebook:** https://www.facebook.com/odontocompanyviradouro/
 
 ---
 

@@ -53,7 +53,7 @@ export const UNITS_DATA: Record<string, UnitData> = {
     whatsapp: '5517996698549',
     whatsappMessage: 'Olá! Gostaria de agendar uma consulta de avaliação na OdontoCompany Viradouro.',
     instagramUrl: 'https://www.instagram.com/odontocompanyviradouro/',
-    facebookUrl: 'https://web.facebook.com/odontocompanyviradouro/',
+    facebookUrl: 'https://www.facebook.com/people/OdontoCompany-ViradouroSP/100063990499692/',
     croCl: 'CRO-SP 130.862',
     address: {
       street: 'Rua Cel. Valter',
